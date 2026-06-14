@@ -20,7 +20,7 @@
 <!-- HERO -->
 <section class="hero">
 	<div class="hero-bg">
-		<img src="/poster.jpg" alt="Short Term movie poster" class="poster-img" />
+		<img src="/poster.png" alt="Short Term movie poster" class="poster-img" />
 		<div class="poster-vignette" />
 	</div>
 
@@ -69,10 +69,6 @@
 			<div class="crew-row">
 				<span class="crew-role">Production Designer</span>
 				<span class="crew-name">Miles B. Carter</span>
-			</div>
-			<div class="crew-row">
-				<span class="crew-role">Edited by</span>
-				<span class="crew-name">John Russell</span>
 			</div>
 			<div class="crew-row">
 				<span class="crew-role">Executive Producer</span>
