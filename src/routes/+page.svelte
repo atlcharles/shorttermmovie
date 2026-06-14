@@ -13,8 +13,9 @@
 
 	const crew = [
 		{ role: 'Written & Directed by', name: 'John Russel' },
-		{ role: 'Director of Photography', name: 'Darius J. Thompson' },
+		{ role: 'Director of Photography', name: 'Jordan Marcel' },
 		{ role: 'Production Designer', name: 'Miles B. Carter' },
+		{ role: 'Sound Design', name: 'Zach Shoup' },
 		{ role: 'Executive Producer', name: 'John Russel' }
 	];
 </script>
