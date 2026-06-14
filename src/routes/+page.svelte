@@ -10,6 +10,13 @@
 		'Auburn Chandler',
 		'Jovan Johnson'
 	];
+
+	const crew = [
+		{ role: 'Written & Directed by', name: 'John Russel' },
+		{ role: 'Director of Photography', name: 'Darius J. Thompson' },
+		{ role: 'Production Designer', name: 'Miles B. Carter' },
+		{ role: 'Executive Producer', name: 'John Russel' }
+	];
 </script>
 
 <svelte:head>
@@ -18,10 +25,14 @@
 </svelte:head>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero" aria-label="Short Term film hero">
 	<div class="hero-bg">
-		<img src="/poster.png" alt="Short Term movie poster" class="poster-img" />
-		<div class="poster-vignette" />
+		<img
+			src="/poster.png"
+			alt="Three faces seen through diamond-shaped frosted glass window panes — poster for Short Term, a Crucial Werks film"
+			class="poster-img"
+		/>
+		<div class="poster-vignette" aria-hidden="true"></div>
 	</div>
 
 	<DiamondLattice></DiamondLattice>
@@ -34,7 +45,7 @@
 </section>
 
 <!-- ABOUT -->
-<section class="about" id="about">
+<section class="about" id="about" aria-label="About the film">
 	<div class="about-inner">
 		<div class="diamond-rule" aria-hidden="true">
 			<span class="rule-line"></span>
@@ -57,24 +68,14 @@
 			{/each}
 		</ul>
 
-		<div class="crew-block">
-			<div class="crew-row">
-				<span class="crew-role">Written &amp; Directed by</span>
-				<span class="crew-name">John Russel</span>
-			</div>
-			<div class="crew-row">
-				<span class="crew-role">Director of Photography</span>
-				<span class="crew-name">Darius J. Thompson</span>
-			</div>
-			<div class="crew-row">
-				<span class="crew-role">Production Designer</span>
-				<span class="crew-name">Miles B. Carter</span>
-			</div>
-			<div class="crew-row">
-				<span class="crew-role">Executive Producer</span>
-				<span class="crew-name">John Russel</span>
-			</div>
-		</div>
+		<dl class="crew-block">
+			{#each crew as { role, name }}
+				<div class="crew-row">
+					<dt class="crew-role">{role}</dt>
+					<dd class="crew-name">{name}</dd>
+				</div>
+			{/each}
+		</dl>
 	</div>
 </section>
 
@@ -131,11 +132,10 @@
 
 	.studio {
 		font-family: 'Montserrat', sans-serif;
-		font-size: clamp(0.6rem, 1.2vw, 0.75rem);
+		font-size: clamp(0.75rem, 1.4vw, 0.875rem);
 		font-weight: 400;
-		letter-spacing: 0.35em;
-		text-transform: uppercase;
-		color: #a09890;
+		letter-spacing: 0.15em;
+		color: #c0b8b0;
 		margin-bottom: 0.75rem;
 	}
 
@@ -152,11 +152,10 @@
 
 	.tagline {
 		font-family: 'Montserrat', sans-serif;
-		font-size: clamp(0.7rem, 1.5vw, 0.9rem);
+		font-size: clamp(0.8rem, 1.6vw, 1rem);
 		font-weight: 300;
-		letter-spacing: 0.25em;
-		text-transform: uppercase;
-		color: #c8c0b4;
+		letter-spacing: 0.1em;
+		color: #d4cec6;
 	}
 
 	/* ── ABOUT ── */
@@ -194,16 +193,16 @@
 	}
 
 	.synopsis {
-		font-size: clamp(0.95rem, 2vw, 1.15rem);
+		font-size: clamp(1rem, 2vw, 1.15rem);
 		line-height: 1.85;
-		color: #b0a898;
+		color: #c0b8b0;
 		font-weight: 300;
 		letter-spacing: 0.02em;
 	}
 
 	.synopsis em {
 		font-style: italic;
-		color: #d4cfc8;
+		color: #dedad4;
 	}
 
 	/* ── CREDITS ── */
@@ -220,11 +219,10 @@
 
 	.section-label {
 		font-family: 'Montserrat', sans-serif;
-		font-size: 0.65rem;
+		font-size: 0.75rem;
 		font-weight: 600;
-		letter-spacing: 0.4em;
-		text-transform: uppercase;
-		color: #5a5248;
+		letter-spacing: 0.2em;
+		color: #a09888;
 		margin-bottom: 1.5rem;
 	}
 
@@ -232,14 +230,14 @@
 		list-style: none;
 		display: flex;
 		flex-wrap: wrap;
-		gap: 0.4rem 0;
+		gap: 0.5rem 0;
 		margin-bottom: 3.5rem;
 	}
 
 	.cast-list li {
-		font-size: clamp(0.85rem, 1.8vw, 1rem);
-		color: #c8c0b4;
-		letter-spacing: 0.08em;
+		font-size: clamp(0.9rem, 1.8vw, 1rem);
+		color: #d0c8c0;
+		letter-spacing: 0.05em;
 		font-weight: 300;
 		width: 100%;
 	}
@@ -247,7 +245,7 @@
 	.cast-list li::before {
 		content: '◆';
 		font-size: 0.4rem;
-		color: #5a5248;
+		color: #6b6058;
 		margin-right: 0.75rem;
 		vertical-align: middle;
 	}
@@ -258,6 +256,7 @@
 		gap: 1rem;
 		border-top: 1px solid #1a1c20;
 		padding-top: 2rem;
+		margin: 0;
 	}
 
 	.crew-row {
@@ -268,18 +267,18 @@
 	}
 
 	.crew-role {
-		font-size: 0.65rem;
-		letter-spacing: 0.25em;
-		text-transform: uppercase;
-		color: #5a5248;
+		font-size: 0.8rem;
+		letter-spacing: 0.08em;
+		color: #9a9088;
 		flex-shrink: 0;
 	}
 
 	.crew-name {
-		font-size: 0.9rem;
-		letter-spacing: 0.1em;
-		color: #c8c0b4;
+		font-size: 0.95rem;
+		letter-spacing: 0.06em;
+		color: #d0c8c0;
 		text-align: right;
+		margin: 0;
 	}
 
 	/* ── FOOTER ── */
@@ -291,17 +290,16 @@
 	}
 
 	.footer-studio {
-		font-size: 0.7rem;
-		letter-spacing: 0.35em;
-		text-transform: uppercase;
-		color: #4a4540;
+		font-size: 0.8rem;
+		letter-spacing: 0.15em;
+		color: #8a8078;
 		margin-bottom: 0.5rem;
 	}
 
 	.footer-copy {
-		font-size: 0.65rem;
-		letter-spacing: 0.1em;
-		color: #2e2c28;
+		font-size: 0.75rem;
+		letter-spacing: 0.05em;
+		color: #706860;
 	}
 
 	/* ── RESPONSIVE ── */
@@ -314,6 +312,13 @@
 
 		.cast-list li {
 			width: auto;
+		}
+	}
+
+	/* ── REDUCED MOTION ── */
+	@media (prefers-reduced-motion: reduce) {
+		:global(.diamond) {
+			transition: none !important;
 		}
 	}
 </style>
