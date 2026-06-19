@@ -29,6 +29,7 @@ jobs:
           command: pages deploy .svelte-kit/cloudflare --project-name=shorttermmovie --branch=main
 
       - name: Ensure www.shorttermmovie.com is a Pages custom domain
+        continue-on-error: true
         run: |
           RESPONSE=$(curl -s -w "\n%{http_code}" \
             -X POST "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects/shorttermmovie/domains" \
