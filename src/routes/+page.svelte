@@ -2,27 +2,32 @@
 	import DiamondLattice from '$lib/DiamondLattice.svelte';
 
 	const cast = [
-		'Roxzane T. Mims',
-		'Ohaji Williams',
-		'Elle Trapkin',
-		'Angel L. Henderson',
-		'Pamela Lyles',
-		'Auburn Chandler',
-		'Jovan Johnson'
+		{ actor: 'Roxzane T. Mims', character: 'Angelica Mason' },
+		{ actor: 'Ohaji Williams', character: 'Ethan' },
+		{ actor: 'Elle Trapkin', character: 'Dr. Wixom' },
+		{ actor: 'Nic Starr', character: 'Thomas' },
+		{ actor: 'Angel L. Henderson', character: 'Wendy' },
+		{ actor: 'Pamela Lyles', character: 'Lisa' },
+		{ actor: 'Auburn Chandler', character: 'Officer Nickels' },
+		{ actor: 'Jovan Johnson', character: 'Officer Randell' }
 	];
 
 	const crew = [
-		{ role: 'Written & Directed by', name: 'John Russel' },
+		{ role: 'Written and Directed by', name: 'John Russel' },
+		{ role: 'Produced by', name: 'John Russel and Jordan Marcel' },
+		{ role: 'Executive Produced by', name: 'John Russel and Misha Broughton' },
 		{ role: 'Director of Photography', name: 'Jordan Marcel' },
-		{ role: 'Production Designer', name: 'Miles B. Carter' },
+		{ role: 'Edited by', name: 'Jordan Marcel' },
 		{ role: 'Sound Design', name: 'Zach Shoup' },
-		{ role: 'Executive Producer', name: 'John Russel' }
+		{ role: 'Hair, Makeup, SFX Makeup and Continuity', name: 'Karmen Russell' },
+		{ role: 'Costume Design', name: 'Summer Tinch' },
+		{ role: 'Physical and Post Production', name: 'Southeast Cinema' }
 	];
 </script>
 
 <svelte:head>
-	<title>Short Term — A Crucial Werks Film</title>
-	<meta name="description" content="Some people never really leave. Short Term — written and directed by John Russel. A Crucial Werks Film." />
+	<title>Short Term — A John Russel Film</title>
+	<meta name="description" content="A grieving widow rents a room to a charming travel nurse, only to become convinced he may be the killer she has been hearing about on the news. Short Term — written and directed by John Russel. A Crucial Werks production." />
 </svelte:head>
 
 <!-- HERO -->
@@ -39,22 +44,35 @@
 	<DiamondLattice></DiamondLattice>
 
 	<div class="hero-content">
-		<p class="studio">A Crucial Werks Film</p>
+		<p class="studio">A John Russel Film</p>
 		<h1 class="title">Short<br />Term</h1>
 		<p class="tagline">Some people never really leave.</p>
 	</div>
 </section>
 
-<!-- ABOUT -->
-<section class="about" id="about" aria-label="About the film">
+<!-- LOGLINE -->
+<section class="logline-section" aria-label="Film logline">
 	<div class="about-inner">
 		<div class="diamond-rule" aria-hidden="true">
 			<span class="rule-line"></span>
 			<span class="rule-diamond">◆</span>
 			<span class="rule-line"></span>
 		</div>
+		<p class="logline">
+			A grieving widow rents a room to a charming travel nurse, only to become convinced he may be the killer she has been hearing about on the news — turning her home into a battleground of fear, memory, and control.
+		</p>
+	</div>
+</section>
+
+<!-- ABOUT THE FILM -->
+<section class="about" id="about" aria-label="About the film">
+	<div class="about-inner">
+		<h2 class="section-label about-label">About the Film</h2>
 		<p class="synopsis">
-			<em>Short Term</em> is a psychological drama exploring the haunting grip of the past on the present — where the walls of a transitional facility hold secrets that refuse to stay buried.
+			<em>Short Term</em> is a psychological thriller about grief, manipulation, and the terrifying question of whether the danger outside the house is worse than the truth hiding inside it. Set primarily in one home, the film follows Angelica Mason, a widow whose attempt to survive loneliness pulls her into a deadly psychological spiral.
+		</p>
+		<p class="synopsis synopsis-second">
+			The title carries a double meaning: a short-term stay, and the unraveling of short-term memory.
 		</p>
 	</div>
 </section>
@@ -64,10 +82,17 @@
 	<div class="credits-inner">
 		<h2 class="section-label">Cast</h2>
 		<ul class="cast-list">
-			{#each cast as name}
-				<li>{name}</li>
+			{#each cast as { actor, character }}
+				<li class="cast-item">
+					<span class="cast-actor">{actor}</span>
+					<span class="cast-character">{character}</span>
+				</li>
 			{/each}
 		</ul>
+
+		<div class="crew-header">
+			<p class="film-credit">A John Russel Film</p>
+		</div>
 
 		<dl class="crew-block">
 			{#each crew as { role, name }}
@@ -77,6 +102,8 @@
 				</div>
 			{/each}
 		</dl>
+
+		<p class="production-note">A Crucial Werks production in association with Southeast Cinema.</p>
 	</div>
 </section>
 
@@ -159,16 +186,37 @@
 		color: #d4cec6;
 	}
 
-	/* ── ABOUT ── */
-	.about {
+	/* ── LOGLINE ── */
+	.logline-section {
 		padding: clamp(4rem, 10vh, 7rem) clamp(1.5rem, 5vw, 5rem);
 		background: #0a0c10;
+	}
+
+	.logline {
+		font-family: 'Cormorant Garamond', serif;
+		font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+		line-height: 1.75;
+		color: #d8d2c8;
+		font-weight: 300;
+		font-style: italic;
+		letter-spacing: 0.02em;
+	}
+
+	/* ── ABOUT ── */
+	.about {
+		padding: clamp(3rem, 7vh, 5rem) clamp(1.5rem, 5vw, 5rem);
+		background: #0a0c10;
+		border-top: 1px solid #161820;
 	}
 
 	.about-inner {
 		max-width: 680px;
 		margin: 0 auto;
 		text-align: center;
+	}
+
+	.about-label {
+		margin-bottom: 2rem;
 	}
 
 	.diamond-rule {
@@ -201,6 +249,10 @@
 		letter-spacing: 0.02em;
 	}
 
+	.synopsis-second {
+		margin-top: 1.5rem;
+	}
+
 	.synopsis em {
 		font-style: italic;
 		color: #dedad4;
@@ -225,38 +277,64 @@
 		letter-spacing: 0.2em;
 		color: #a09888;
 		margin-bottom: 1.5rem;
+		text-transform: uppercase;
 	}
 
 	.cast-list {
 		list-style: none;
 		display: flex;
-		flex-wrap: wrap;
-		gap: 0.5rem 0;
+		flex-direction: column;
+		gap: 0;
 		margin-bottom: 3.5rem;
 	}
 
-	.cast-list li {
+	.cast-item {
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
+		gap: 1rem;
+		padding: 0.45rem 0;
+		border-bottom: 1px solid #13151a;
+	}
+
+	.cast-item:first-child {
+		border-top: 1px solid #13151a;
+	}
+
+	.cast-actor {
 		font-size: clamp(0.9rem, 1.8vw, 1rem);
 		color: #d0c8c0;
 		letter-spacing: 0.05em;
 		font-weight: 300;
-		width: 100%;
 	}
 
-	.cast-list li::before {
-		content: '◆';
-		font-size: 0.4rem;
-		color: #6b6058;
-		margin-right: 0.75rem;
-		vertical-align: middle;
+	.cast-character {
+		font-size: clamp(0.8rem, 1.6vw, 0.9rem);
+		color: #8a8078;
+		letter-spacing: 0.08em;
+		font-style: italic;
+		text-align: right;
+	}
+
+	.crew-header {
+		border-top: 1px solid #1a1c20;
+		padding-top: 2rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.film-credit {
+		font-family: 'Cormorant Garamond', serif;
+		font-size: clamp(1rem, 2vw, 1.15rem);
+		font-style: italic;
+		letter-spacing: 0.06em;
+		color: #c8c0b4;
+		margin: 0;
 	}
 
 	.crew-block {
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
-		border-top: 1px solid #1a1c20;
-		padding-top: 2rem;
 		margin: 0;
 	}
 
@@ -280,6 +358,15 @@
 		color: #d0c8c0;
 		text-align: right;
 		margin: 0;
+	}
+
+	.production-note {
+		margin-top: 2.5rem;
+		font-size: 0.8rem;
+		letter-spacing: 0.08em;
+		color: #7a7268;
+		font-style: italic;
+		text-align: center;
 	}
 
 	/* ── FOOTER ── */
@@ -308,11 +395,25 @@
 		.cast-list {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
-			gap: 0.5rem 2rem;
+			gap: 0;
 		}
 
-		.cast-list li {
-			width: auto;
+		.cast-item {
+			padding: 0.5rem 0.75rem;
+		}
+
+		.cast-item:nth-child(odd) {
+			border-right: 1px solid #13151a;
+			padding-left: 0;
+		}
+
+		.cast-item:nth-child(even) {
+			padding-right: 0;
+		}
+
+		.cast-item:first-child,
+		.cast-item:nth-child(2) {
+			border-top: 1px solid #13151a;
 		}
 	}
 
