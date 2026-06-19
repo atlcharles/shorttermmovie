@@ -109,7 +109,7 @@
 
 <!-- FOOTER -->
 <footer class="footer">
-	<img src="/cw-noname.jpeg" alt="Crucial Werks logo" class="footer-logo" />
+	<img src="/crucial.jpeg" alt="Crucial Werks logo" class="footer-logo" />
 	<p class="footer-studio">Crucial Werks Productions</p>
 	<p class="footer-copy">&copy; {new Date().getFullYear()} Crucial Werks. All rights reserved.</p>
 </footer>
