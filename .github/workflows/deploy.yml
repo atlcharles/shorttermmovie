@@ -27,3 +27,18 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy .svelte-kit/cloudflare --project-name=shorttermmovie --branch=main
+
+      - name: Ensure www.shorttermmovie.com is a Pages custom domain
+        run: |
+          RESPONSE=$(curl -s -w "\n%{http_code}" \
+            -X POST "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects/shorttermmovie/domains" \
+            -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d '{"name":"www.shorttermmovie.com"}')
+          HTTP_STATUS=$(echo "$RESPONSE" | tail -1)
+          echo "API status: $HTTP_STATUS"
+          echo "$RESPONSE" | head -1
+          [ "$HTTP_STATUS" = "200" ] || [ "$HTTP_STATUS" = "409" ] || exit 1
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
