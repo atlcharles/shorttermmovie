@@ -107,6 +107,12 @@
 	</div>
 </section>
 
+<!-- LOGOS -->
+<div class="logos-bar">
+	<img src="/crucialwerks.jpeg" alt="Crucial Werks logo" class="partner-logo" />
+	<img src="/Southeast.jpeg" alt="Southeast Cinema logo" class="partner-logo" />
+</div>
+
 <!-- FOOTER -->
 <footer class="footer">
 	<p class="footer-studio">Crucial Werks Productions</p>
@@ -367,6 +373,25 @@
 		color: #7a7268;
 		font-style: italic;
 		text-align: center;
+	}
+
+	/* ── LOGOS ── */
+	.logos-bar {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 3rem;
+		padding: 3rem clamp(1.5rem, 5vw, 5rem);
+		background: #060708;
+		border-top: 1px solid #12141a;
+	}
+
+	.partner-logo {
+		width: auto;
+		height: 64px;
+		object-fit: contain;
+		opacity: 0.85;
+		mix-blend-mode: lighten;
 	}
 
 	/* ── FOOTER ── */
