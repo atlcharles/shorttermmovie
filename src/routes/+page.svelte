@@ -109,8 +109,7 @@
 
 <!-- LOGOS -->
 <div class="logos-bar">
-	<img src="/crucialwerks.jpeg" alt="Crucial Werks logo" class="partner-logo" />
-	<img src="/Southeast.jpeg" alt="Southeast Cinema logo" class="partner-logo" />
+	<img src="/cw.jpeg" alt="Crucial Werks logo" class="partner-logo" />
 </div>
 
 <!-- FOOTER -->
