@@ -90,9 +90,7 @@
 			{/each}
 		</ul>
 
-		<div class="crew-header">
-			<p class="film-credit">A John Russel Film</p>
-		</div>
+		<h2 class="section-label">Crew</h2>
 
 		<dl class="crew-block">
 			{#each crew as { role, name }}
