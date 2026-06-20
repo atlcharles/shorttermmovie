@@ -45,6 +45,32 @@
 	<DiamondLattice></DiamondLattice>
 
 	<div class="hero-content">
+		<div class="social-links">
+			<a href="https://www.instagram.com/shorttermmovie" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="social-icon" width="22" height="22">
+					<defs>
+						<radialGradient id="ig-grad" r="150%" cx="30%" cy="107%">
+							<stop offset="0%" stop-color="#fdf497"/>
+							<stop offset="5%" stop-color="#fdf497"/>
+							<stop offset="45%" stop-color="#fd5949"/>
+							<stop offset="60%" stop-color="#d6249f"/>
+							<stop offset="90%" stop-color="#285AEB"/>
+						</radialGradient>
+					</defs>
+					<rect width="24" height="24" rx="5.5" fill="url(#ig-grad)"/>
+					<rect x="2.4" y="2.4" width="19.2" height="19.2" rx="4.2" fill="url(#ig-grad)"/>
+					<circle cx="12" cy="12" r="4.2" fill="none" stroke="white" stroke-width="1.8"/>
+					<circle cx="17.2" cy="6.8" r="1.1" fill="white"/>
+					<rect x="3.5" y="3.5" width="17" height="17" rx="3.5" fill="none" stroke="white" stroke-width="1.5"/>
+				</svg>
+			</a>
+			<a href="https://www.facebook.com/profile.php?id=61590637656028" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="social-icon" width="22" height="22">
+					<rect width="24" height="24" rx="5.5" fill="#1877F2"/>
+					<path d="M16 8h-2a1 1 0 0 0-1 1v2h3l-.5 3H13v7h-3v-7H8v-3h2V9a4 4 0 0 1 4-4h2v3z" fill="white"/>
+				</svg>
+			</a>
+		</div>
 		<p class="studio">A John Russel Film</p>
 		<h1 class="title">Short<br />Term</h1>
 		<p class="tagline">Some people never really leave.</p>
@@ -108,7 +134,9 @@
 
 <!-- FOOTER -->
 <footer class="footer">
-	<img src="/cw-noname.jpeg" alt="Crucial Werks logo" class="footer-logo" />
+	<a href="https://crucialwerks.com" target="_blank" rel="noopener noreferrer">
+		<img src="/cw-noname.jpeg" alt="Crucial Werks logo" class="footer-logo" />
+	</a>
 	<p class="footer-studio">Crucial Werks Productions</p>
 	<p class="footer-copy">&copy; {new Date().getFullYear()} Crucial Werks. All rights reserved.</p>
 </footer>
@@ -384,6 +412,24 @@
 		background: #060708;
 		border-top: 1px solid #12141a;
 		text-align: center;
+	}
+
+	.social-links {
+		display: flex;
+		justify-content: flex-start;
+		gap: 0.75rem;
+		margin-bottom: 1.25rem;
+	}
+
+	.social-links a {
+		display: flex;
+		align-items: center;
+		opacity: 0.85;
+		transition: opacity 0.2s ease;
+	}
+
+	.social-links a:hover {
+		opacity: 1;
 	}
 
 	.footer-studio {
