@@ -13,13 +13,14 @@
 	];
 
 	const crew = [
-		{ role: 'Written and Directed by', name: 'John Russel' },
-		{ role: 'Produced by', name: 'John Russel and Jordan Marcel' },
-		{ role: 'Executive Produced by', name: 'John Russel and Misha Broughton' },
+		{ role: 'Writer, Director', name: 'John Russel' },
+		{ role: 'Producer', name: 'John Russel, Jordan Marcel' },
+		{ role: 'Executive Producer', name: 'John Russel, Misha Broughton' },
+		{ role: 'Associate Producer', name: 'Tamera Miyasato' },
 		{ role: 'Director of Photography', name: 'Jordan Marcel' },
-		{ role: 'Edited by', name: 'Jordan Marcel' },
+		{ role: 'Editor', name: 'Jordan Marcel' },
 		{ role: 'Sound Design', name: 'Zach Shoup' },
-		{ role: 'Hair, Makeup, SFX Makeup and Continuity', name: 'Karmen Russell' },
+		{ role: 'Hair & Makeup', name: 'Karmen Russell' },
 		{ role: 'Costume Design', name: 'Summer Tinch' },
 		{ role: 'Physical and Post Production', name: 'Southeast Cinema' }
 	];
