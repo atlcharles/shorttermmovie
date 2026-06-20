@@ -426,6 +426,7 @@
 		align-items: center;
 		opacity: 0.85;
 		transition: opacity 0.2s ease;
+		pointer-events: all;
 	}
 
 	.social-links a:hover {
