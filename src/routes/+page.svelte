@@ -15,11 +15,11 @@
 	const crew = [
 		{ role: 'Writer, Director', name: 'John Russel' },
 		{ role: 'Producer', name: 'John Russel, Jordan Marcel' },
-		{ role: 'Executive Producer', name: 'John Russel, Misha Broughton' },
+		{ role: 'Executive Producer', name: 'Misha Broughton' },
 		{ role: 'Associate Producer', name: 'Tamera Miyasato' },
 		{ role: 'Director of Photography', name: 'Jordan Marcel' },
 		{ role: 'Editor', name: 'Jordan Marcel' },
-		{ role: 'Sound Design', name: 'Zach Shoup' },
+		{ role: 'Boom Operator, Sound Mixer', name: 'Zach Shoup' },
 		{ role: 'Hair & Makeup', name: 'Karmen Russell' },
 		{ role: 'Costume Design', name: 'Summer Tinch' },
 		{ role: 'Physical and Post Production', name: 'Southeast Cinema' }
