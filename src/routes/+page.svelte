@@ -70,6 +70,12 @@
 					<path d="M16 8h-2a1 1 0 0 0-1 1v2h3l-.5 3H13v7h-3v-7H8v-3h2V9a4 4 0 0 1 4-4h2v3z" fill="white"/>
 				</svg>
 			</a>
+			<a href="https://www.imdb.com/title/tt43552939/?ref_=fn_t_2" target="_blank" rel="noopener noreferrer" aria-label="IMDb">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="social-icon" width="22" height="22">
+					<rect width="24" height="24" rx="5.5" fill="#F5C518"/>
+					<text x="12" y="16" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="9" fill="#000000">IMDb</text>
+				</svg>
+			</a>
 		</div>
 		<p class="studio">A John Russel Film</p>
 		<h1 class="title">Short<br />Term</h1>
